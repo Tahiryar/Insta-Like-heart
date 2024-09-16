@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insta Love BTN</title>
+    <link rel="stylesheet" href="love.css">
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+    <style>
+        /* Example CSS to demonstrate the animation */
+        #container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        #container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #container i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            font-size: 3rem;
+            color: red;
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="https://img.freepik.com/free-photo/cowboy-photorealistic-environment_23-2151447823.jpg" alt="">
+        <i class="ri-heart-fill"></i>
+    </div>
+
+    <script>
+        var love = document.querySelector('i');
+        var container = document.querySelector('#container');
+
+        container.addEventListener('dblclick', () => {
+            love.style.transform = "translate(-50%, -50%) scale(1)";
+            love.style.opacity = 1; // Make the heart fully visible
+
+            setTimeout(() => {
+                love.style.transform = "translate(-50%, -50%) scale(0)";
+            }, 2000);
+            setTimeout(() => {
+                love.style.opacity = 0;
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
